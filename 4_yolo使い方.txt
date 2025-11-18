@@ -1,0 +1,51 @@
+yolo学習
+
+
+
+
+
+
+
+Yoloでま学習設定
+
+
+
+お試し設定
+yolo detect train data=data.yaml model=yolov8n.pt epochs=2 imgsz=128 batch=8 
+
+データを絞っていないので、この設定でも2,30分かかる
+
+
+epochs=2　を　10や20以上にしてみる
+メモリーが十分あれば、
+
+imgsz=256 batch=8 を増やしてみる　
+
+
+
+
+
+
+Yolo8
+pip install ultralytics
+python -m pip install pillow
+
+YOLOv10などはGitHubのリポジトリをクローンが必要など少し面倒です。
+　
+
+yolo detect train data=data.yaml model=yolov8n.pt epochs=3 imgsz=320
+メモリ不足になる恐れあり
+
+
+
+yolo classify train data=dataset model=yolov8n-cls.pt epochs=20 imgsz=224
+
+
+MacでGPUを使う
+
+yolo detect train data=data.yaml model=yolov8n.pt epochs=30 imgsz=320 batch=-1 device='mps'
+batchは-1の自動か　少ない数で行う
+メモリ不足になる恐れあり
+
+現実的な設定
+yolo detect train data=data.yaml model=yolov8n.pt epochs=2 imgsz=256 batch=8 

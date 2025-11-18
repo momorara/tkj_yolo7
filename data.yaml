@@ -1,0 +1,4 @@
+train: ./dataset_l/images/train
+val: ./dataset_l/images/val
+nc: 7
+names: ['bike', 'cars', 'cats', 'dogs', 'flowers', 'horses', 'human']
