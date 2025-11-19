@@ -1,8 +1,5 @@
 """
-2025/08/12
-人間の数をカウント
-手とかも独立して人間と判定するので、信頼度で足切りできるようにした。
-正確な人数は微妙かも、ただ、ちょっと離れた人間はうまくカウントできそう
+独自yoloモデルを使って、動画に対して物体検出を行う
 
 対応動画フォーマットの例（OpenCV依存）
 MP4 (.mp4)
@@ -27,12 +24,8 @@ print()
 print("qキーの入力で終了します。")
 time.sleep(1)
 
-# YOLOのモデルを読み込み（nanoモデルを推奨） 2025/8時点対応モデル
-# model = YOLO("yolo11n.pt")
-# model = YOLO("yolov10n.pt")
-# model = YOLO("yolov9t.pt")
+# YOLOのモデルを読み込み
 model = YOLO('runs/detect/train/weights/best.pt')
-# model = 'runs/detect/train/weights/best.pt'
 
 model_name = model.ckpt_path # モデルファイルのパス
 print("yoloモデル:",model_name)  
